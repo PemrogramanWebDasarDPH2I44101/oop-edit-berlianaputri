@@ -9,22 +9,17 @@
 <?php
 if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
-        $nim = $row['nim'];
+        $id = $row['id'];
         echo "<tr>";
         echo "<td>" . $row["nama"]. "</td>"; 
         echo "<td>" . $row["nim"]. "</td>";
-        echo "<td>" . $row["tgl_lahir"]. "</td>";
-        echo "<td>
-            <a href='form_edit.php?nim=$nim'>Edit</a> | 
-            <a href='delete.php?nim=$nim'>Hapus</a> | 
-            
-            </td>";
+        echo "<td>" . $row["ttl"]. "</td>";
+        echo "<td><a href='formedit.php?id=$id'>Edit</a></td>";
         echo "</tr>";
     }
 } else {
     echo "0 results";
 }
-mysqli_close($conn);
 ?> 
     </tbody>
 </table>
